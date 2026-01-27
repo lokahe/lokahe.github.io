@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Resume - English</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #1a1a2e;
+            --color-secondary: #16213e;
+            --color-accent: #e94560;
+            --color-accent-light: #ff6b88;
+            --color-bg: #fafafa;
+            --color-surface: #ffffff;
+            --color-text: #2d2d2d;
+            --color-text-light: #666666;
+            --color-border: #e0e0e0;
+            
+            --font-display: 'Crimson Pro', serif;
+            --font-body: 'DM Sans', sans-serif;
+            
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.12);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8eef5 100%);
+            color: var(--color-text);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 2rem 1rem;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--color-surface);
+            box-shadow: var(--shadow-lg);
+            border-radius: 2px;
+            overflow: hidden;
+            animation: slideUp 0.6s ease-out;
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .content {
+            padding: 3rem 3rem 4rem;
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Header */
+        .resume-header {
+            border-bottom: 2px solid var(--color-accent);
+            padding-bottom: 2rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+            display: flex;
+            gap: 2.5rem;
+            align-items: flex-start;
+        }
+        
+        .resume-header::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 120px;
+            height: 2px;
+            background: var(--color-primary);
+        }
+        
+        .profile-image-container {
+            flex-shrink: 0;
+            position: relative;
+        }
+        
+        .profile-image {
+            border-radius: 2px;
+            object-fit: cover;
+            border: 4px solid var(--color-primary);
+            box-shadow: var(--shadow-md);
+            transition: all 0.4s ease;
+        }
+        
+        .profile-image:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .profile-image-container::after {
+            content: '';
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--color-accent);
+            border-radius: 2px;
+            z-index: -1;
+        }
+        
+        .header-content {
+            flex: 1;
+        }
+        
+        h1 {
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+            line-height: 1.1;
+            letter-spacing: -0.5px;
+        }
+        
+        .title {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--color-accent);
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .contact-item::before {
+            content: '•';
+            color: var(--color-accent);
+            font-weight: bold;
+        }
+        
+        /* Sections */
+        .resume-section {
+            margin-bottom: 2.5rem;
+        }
+        
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--color-primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--color-border);
+            position: relative;
+        }
+        
+        .section-title::before {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 60px;
+            height: 1px;
+            background: var(--color-accent);
+        }
+        
+        /* Experience & Education Items */
+        .item {
+            margin-bottom: 2rem;
+            padding-left: 1.5rem;
+            border-left: 2px solid var(--color-border);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 0.3rem;
+            width: 10px;
+            height: 10px;
+            background: var(--color-accent);
+            border-radius: 50%;
+            box-shadow: 0 0 0 3px var(--color-surface);
+        }
+        
+        .item:hover {
+            border-left-color: var(--color-accent);
+        }
+        
+        .item-header {
+            margin-bottom: 0.75rem;
+        }
+        
+        .item-title {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--color-primary);
+            margin-bottom: 0.25rem;
+        }
+        
+        .item-subtitle {
+            font-size: 1rem;
+            color: var(--color-accent);
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+        
+        .item-meta {
+            font-size: 0.85rem;
+            color: var(--color-text-light);
+            font-style: italic;
+        }
+        
+        .item-description {
+            margin-top: 0.75rem;
+            color: var(--color-text);
+            line-height: 1.7;
+        }
+        
+        .item-description ul {
+            margin-top: 0.5rem;
+            padding-left: 1.25rem;
+        }
+        
+        .item-description li {
+            white-space: pre-wrap;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .skill-category {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            padding: 1.5rem;
+            border-radius: 2px;
+            border-left: 3px solid var(--color-accent);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .skill-category h3 {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--color-primary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .skill-tag {
+            background: var(--color-primary);
+            color: white;
+            padding: 0.35rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        
+        .skill-tag:hover {
+            background: var(--color-accent);
+            transform: scale(1.05);
+        }
+        
+        /* Summary */
+        .summary-text {
+            white-space: pre-wrap; /* This makes \n work as new lines */
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--color-text);
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            padding: 2rem;
+            border-left: 4px solid var(--color-accent);
+            border-radius: 2px;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        /* Language Switcher */
+        .language-switcher {
+            background: var(--color-primary);
+            padding: 1rem 3rem;
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+        }
+        
+        .lang-link {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: color 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 2px;
+        }
+        
+        .lang-link:hover {
+            color: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .lang-link.active {
+            color: #ffffff;
+            background: rgba(233, 69, 96, 0.3);
+            border-bottom: 2px solid var(--color-accent);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem 0.5rem;
+            }
+            
+            .container {
+                border-radius: 0;
+            }
+            
+            .content {
+                padding: 2rem 1.5rem;
+            }
+            
+            .resume-header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            
+            .profile-image {
+                width: 140px;
+                height: 140px;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .title {
+                font-size: 1.2rem;
+            }
+            
+            .language-switcher {
+                padding: 1rem 1.5rem;
+                justify-content: center;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 0.75rem;
+                justify-content: center;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+                max-width: 100%;
+            }
+            
+            .language-switcher {
+                display: none;
+            }
+            
+            .content {
+                padding: 1rem;
+            }
+            
+            .item {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+    <script src="config.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="language-switcher">
+            <a href="resume-en.html" class="lang-link active">English</a>
+            <a href="resume-cn.html" class="lang-link">中文</a>
+            <a href="resume-ja.html" class="lang-link">日本語</a>
+        </div>
+        
+        <div class="content">
+            <header class="resume-header">
+                <div class="profile-image-container">
+                    <img src="" alt="Profile Photo" class="profile-image">
+                </div>
+                <div class="header-content">
+                    <h1></h1>
+                    <div class="title"></div>
+                    <div class="contact-info">
+                        <span class="contact-item"></span>
+                        <span class="contact-item"></span>
+                        <span class="contact-item"></span>
+                        <span class="contact-item"></span>
+                        <span class="contact-item"></span>
+                    </div>
+                </div>
+            </header>
+            
+            <section class="resume-section">
+                <h2 class="section-title"></h2>
+                <div class="summary-text"></div>
+            </section>
+            
+            <section class="resume-section">
+                <h2 class="section-title"></h2>
+                <div id="experience-container"></div>
+            </section>
+            
+            <section class="resume-section">
+                <h2 class="section-title"></h2>
+                <div id="education-container"></div>
+            </section>
+            
+            <section class="resume-section">
+                <h2 class="section-title"></h2>
+                <div class="skills-grid" id="skills-container"></div>
+            </section>
+        </div>
+    </div>
+    
+    <script>
+        // Load data from config
+        document.addEventListener('DOMContentLoaded', function() {
+            const lang = 'english';
+            const data = getLanguageData(lang);
+            
+            // Update profile image
+            document.querySelector('.profile-image').src = resumeConfig.profileImage;
+            document.querySelector('.profile-image').width = resumeConfig.profileImageWidth;
+            document.querySelector('.profile-image').height = resumeConfig.profileImageHeight;
+
+            // Update header
+            document.querySelector('h1').textContent = data.name;
+            document.querySelector('.title').textContent = data.title;
+            
+            // Update contact info
+            const contactItems = document.querySelectorAll('.contact-item');
+            contactItems[0].textContent = data.email;
+            contactItems[1].textContent = data.phone;
+            contactItems[2].textContent = data.location;
+            contactItems[3].textContent = resumeConfig.contact.linkedin;
+            
+            // Update summary
+            document.querySelector('.summary-text').textContent = data.summary;
+            
+            // Update section titles
+            const sectionTitles = document.querySelectorAll('.section-title');
+            sectionTitles[0].textContent = data.sectionTitles.summary;
+            sectionTitles[1].textContent = data.sectionTitles.experience;
+            sectionTitles[2].textContent = data.sectionTitles.education;
+            sectionTitles[3].textContent = data.sectionTitles.skills;
+            
+            // Render experience
+            const experienceContainer = document.getElementById('experience-container');
+            resumeConfig.experience.forEach(exp => {
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'item';
+                
+                const ul = document.createElement('ul');
+                exp.achievements[lang].forEach(achievement => {
+                    const li = document.createElement('li');
+                    li.textContent = achievement;
+                    ul.appendChild(li);
+                });
+                
+                itemDiv.innerHTML = `
+                    <div class="item-header">
+                        <h3 class="item-title">${exp.title[lang]}</h3>
+                        <div class="item-subtitle">${exp.company[lang]}</div>
+                        <div class="item-meta">${exp.period[lang]} | ${exp.location[lang]}</div>
+                    </div>
+                    <div class="item-description"></div>
+                `;
+                itemDiv.querySelector('.item-description').appendChild(ul);
+                experienceContainer.appendChild(itemDiv);
+            });
+            
+            // Render education
+            const educationContainer = document.getElementById('education-container');
+            resumeConfig.education.forEach(edu => {
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'item';
+                
+                const coursePrefix = lang === 'english' ? 'Relevant coursework: ' : '';
+                
+                itemDiv.innerHTML = `
+                    <div class="item-header">
+                        <h3 class="item-title">${edu.degree[lang]}</h3>
+                        <div class="item-subtitle">${edu.school[lang]}</div>
+                        <div class="item-meta">${edu.period} | GPA: ${edu.gpa}</div>
+                    </div>
+                    <div class="item-description">
+                        ${coursePrefix}${edu.coursework[lang]}
+                    </div>
+                `;
+                educationContainer.appendChild(itemDiv);
+            });
+            
+            // Render skills
+            const skillsContainer = document.getElementById('skills-container');
+            resumeConfig.skills.categories.forEach(category => {
+                const categoryDiv = document.createElement('div');
+                categoryDiv.className = 'skill-category';
+                
+                const tagsDiv = document.createElement('div');
+                tagsDiv.className = 'skill-tags';
+                category.items.forEach(skill => {
+                    const tag = document.createElement('span');
+                    tag.className = 'skill-tag';
+                    tag.textContent = skill;
+                    tagsDiv.appendChild(tag);
+                });
+                
+                categoryDiv.innerHTML = `<h3>${category.name[lang]}</h3>`;
+                categoryDiv.appendChild(tagsDiv);
+                skillsContainer.appendChild(categoryDiv);
+            });
+        });
+    </script>
+</body>
+</html>
