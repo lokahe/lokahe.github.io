@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Resume</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #1a1a2e;
+            --color-secondary: #16213e;
+            --color-accent: #e94560;
+            --color-accent-light: #ff6b88;
+            --color-bg: #fafafa;
+            --color-surface: #ffffff;
+            --color-text: #2d2d2d;
+            --color-text-light: #666666;
+            --color-border: #e0e0e0;
+            
+            --font-display: 'Crimson Pro', serif;
+            --font-body: 'DM Sans', sans-serif;
+            
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.12);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8eef5 100%);
+            color: var(--color-text);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 2rem 1rem;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--color-surface);
+            box-shadow: var(--shadow-lg);
+            border-radius: 2px;
+            overflow: hidden;
+            animation: slideUp 0.6s ease-out;
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Tab Navigation */
+        .tab-nav {
+            display: flex;
+            background: var(--color-primary);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .tab-nav::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                rgba(255, 255, 255, 0.05) 50%, 
+                transparent 100%);
+            animation: shimmer 3s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .tab-button {
+            flex: 1;
+            padding: 1.25rem 2rem;
+            background: transparent;
+            border: none;
+            color: rgba(255, 255, 255, 0.6);
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            z-index: 1;
+        }
+        
+        .tab-button::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--color-accent);
+            transform: scaleX(0);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .tab-button:hover {
+            color: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .tab-button.active {
+            color: #ffffff;
+            background: rgba(233, 69, 96, 0.15);
+        }
+        
+        .tab-button.active::after {
+            transform: scaleX(1);
+        }
+        
+        /* Tab Content */
+        .tab-content {
+            display: none;
+            padding: 3rem 3rem 4rem;
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Header */
+        .resume-header {
+            border-bottom: 2px solid var(--color-accent);
+            padding-bottom: 2rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+            display: flex;
+            gap: 2.5rem;
+            align-items: flex-start;
+        }
+
+        .profile-image-container {
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        .profile-image {
+            width: 160px;
+            height: 160px;
+            border-radius: 2px;
+            object-fit: cover;
+            border: 4px solid var(--color-primary);
+            box-shadow: var(--shadow-md);
+            transition: all 0.4s ease;
+        }
+
+        .profile-image:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .profile-image-container::after {
+            content: '';
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--color-accent);
+            border-radius: 2px;
+            z-index: -1;
+        }
+
+        .header-content {
+            flex: 1;
+        }
+        
+        .resume-header::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 120px;
+            height: 2px;
+            background: var(--color-primary);
+        }
+        
+        h1 {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+            line-height: 1.1;
+            letter-spacing: -0.5px;
+        }
+        
+        .title {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--color-accent);
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .contact-item::before {
+            content: '•';
+            color: var(--color-accent);
+            font-weight: bold;
+        }
+        
+        /* Sections */
+        .resume-section {
+            margin-bottom: 2.5rem;
+        }
+        
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--color-primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--color-border);
+            position: relative;
+        }
+        
+        .section-title::before {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 60px;
+            height: 1px;
+            background: var(--color-accent);
+        }
+        
+        /* Experience & Education Items */
+        .item {
+            margin-bottom: 2rem;
+            padding-left: 1.5rem;
+            border-left: 2px solid var(--color-border);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 0.3rem;
+            width: 10px;
+            height: 10px;
+            background: var(--color-accent);
+            border-radius: 50%;
+            box-shadow: 0 0 0 3px var(--color-surface);
+        }
+        
+        .item:hover {
+            border-left-color: var(--color-accent);
+        }
+        
+        .item-header {
+            margin-bottom: 0.75rem;
+        }
+        
+        .item-title {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--color-primary);
+            margin-bottom: 0.25rem;
+        }
+        
+        .item-subtitle {
+            font-size: 1rem;
+            color: var(--color-accent);
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+        
+        .item-meta {
+            font-size: 0.85rem;
+            color: var(--color-text-light);
+            font-style: italic;
+        }
+        
+        .item-description {
+            margin-top: 0.75rem;
+            color: var(--color-text);
+            line-height: 1.7;
+        }
+        
+        .item-description ul {
+            margin-top: 0.5rem;
+            padding-left: 1.25rem;
+        }
+        
+        .item-description li {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .skill-category {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            padding: 1.5rem;
+            border-radius: 2px;
+            border-left: 3px solid var(--color-accent);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .skill-category h3 {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--color-primary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .skill-tag {
+            background: var(--color-primary);
+            color: white;
+            padding: 0.35rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        
+        .skill-tag:hover {
+            background: var(--color-accent);
+            transform: scale(1.05);
+        }
+        
+        /* Summary */
+        .summary-text {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--color-text);
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            padding: 2rem;
+            border-left: 4px solid var(--color-accent);
+            border-radius: 2px;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem 0.5rem;
+            }
+            
+            .container {
+                border-radius: 0;
+            }
+            
+            .tab-content {
+                padding: 2rem 1.5rem;
+            }
+            
+            .resume-header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .profile-image {
+                width: 140px;
+                height: 140px;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .title {
+                font-size: 1.2rem;
+            }
+            
+            .tab-button {
+                padding: 1rem;
+                font-size: 0.85rem;
+                letter-spacing: 1px;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 0.75rem;
+                justify-content: center;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+                max-width: 100%;
+            }
+            
+            .tab-nav {
+                display: none;
+            }
+            
+            .tab-content {
+                display: block !important;
+                padding: 1rem;
+                page-break-after: always;
+            }
+            
+            .tab-content:last-child {
+                page-break-after: auto;
+            }
+            
+            .item {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="tab-nav">
+            <button class="tab-button active" onclick="switchTab(event, 'english')">English</button>
+            <button class="tab-button" onclick="switchTab(event, 'japanese')">日本語</button>
+            <button class="tab-button" onclick="switchTab(event, 'chinese')">中文</button>
+        </nav>
+        
+        <!-- English Version -->
+        <div id="english" class="tab-content active">
+            <header class="resume-header">
+                <div class="profile-image-container">
+                    <img src="https://identicons.github.com/lokahe.png" alt="Profile Photo" class="profile-image">　<!-- https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop -->
+                </div>
+                <div class="header-content">
+                    <h1>Your Name</h1>
+                    <div class="title">Senior Software Engineer</div>
+                    <div class="contact-info">
+                        <span class="contact-item"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0c69616d65604c69746d617c6069226f6361">[email&#160;protected]</a></span>
+                        <span class="contact-item">+1 (123) 456-7890</span>
+                        <span class="contact-item">City, Country</span>
+                        <span class="contact-item">linkedin.com/in/yourprofile</span>
+                    </div>
+                </div>
+            </header>
+            
+            <section class="resume-section">
+                <h2 class="section-title">Professional Summary</h2>
+                <div class="summary-text">
+                    Results-driven software engineer with 8+ years of experience in full-stack development, cloud architecture, and team leadership. Proven track record of delivering scalable solutions that drive business growth and enhance user experience. Passionate about clean code, innovative problem-solving, and mentoring emerging talent.
+                </div>
+            </section>
+            
+            <section class="resume-section">
+                <h2 class="section-title">Work Experience</h2>
+                
+                <div class="item">
+                    <div class="item-header">
+                        <h3 class="item-title">Senior Software Engineer</h3>
+                        <div class="item-subtitle">Tech Company Inc.</div>
+                        <div class="item-meta">January 2020 - Present | San Francisco, CA</div>
+                    </div>
+                    <div class="item-description">
+                        <ul>
+                            <li>Led a team of 5 engineers in developing a cloud-native microservices platform, reducing deployment time by 60%</li>
+                            <li>Architected and implemented a real-time data processing pipeline handling 10M+ events daily</li>
+                            <li>Mentored junior developers and conducted code reviews to maintain high code quality standards</li>
+                            <li>Collaborated with product managers to define technical requirements and project roadmaps</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="item">
+                    <div class="item-header">
+                        <h3 class="item-title">Software Engineer</h3>
+                        <div class="item-subtitle">Digital Solutions Ltd.</div>
+                        <div class="item-meta">June 2017 - December 2019 | New York, NY</div>
+                    </div>
+                    <div class="item-description">
+                        <ul>
+                            <li>Developed and maintained RESTful APIs serving 500K+ daily active users</li>
+                            <li>Optimized database queries resulting in 40% improvement in application performance</li>
+                            <li>Implemented automated testing framework, increasing code coverage from 45% to 85%</li>
+                            <li>Participated in agile development process and sprint planning sessions</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="item">
+                    <div class="item-header">
+                        <h3 class="item-title">Junior Developer</h3>
+                        <div class="item-subtitle">StartUp Innovations</div>
+                        <div class="item-meta">July 2015 - May 2017 | Boston, MA</div>
+                    </div>
+                    <div class="item-description">
+                        <ul>
+                            <li>Built responsive web applications using React and Node.js</li>
+                            <li>Integrated third-party APIs and payment processing systems</li>
+                            <li>Collaborated with designers to implement pixel-perfect UI components</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="resume-section">
+                <h2 class="section-title">Education</h2>
+                
+                <div class="item">
+                    <div class="item-header">
+                        <h3 class="item-title">Bachelor of Science in Computer Science</h3>
+                        <div class="item-subtitle">University Name</div>
+                        <div class="item-meta">2011 - 2015 | GPA: 3.8/4.0</div>
+                    </div>
+                    <div class="item-description">
+                        Relevant coursework: Data Structures, Algorithms, Database Systems, Software Engineering, Machine Learning
+                    </div>
+                </div>
+            </section>
+            
+            <section class="resume-section">
+                <h2 class="section-title">Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Programming Languages</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Java</span>
+                            <span class="skill-tag">TypeScript</span>
+                            <span class="skill-tag">Go</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>Frameworks & Libraries</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">Express</span>
+                            <span class="skill-tag">Django</span>
+                            <span class="skill-tag">Spring Boot</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>Cloud & DevOps</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">AWS</span>
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">Kubernetes</span>
+                            <span class="skill-tag">CI/CD</span>
+                            <span class="skill-tag">Terraform</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>Databases</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">PostgreSQL</span>
+                            <span class="skill-tag">MongoDB</span>
+                            <span class="skill-tag">Redis</span>
+                            <span class="skill-tag">MySQL</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <!-- Chinese Version -->
+        <div id="chinese" class="tab-content">
+            <header class="resume-header">
+                <div class="profile-image-container">
+                    <img src="https://identicons.github.com/lokahe.png" alt="Profile Photo" class="profile-image">
+                </div>
+                <div class="header-content">
+                    <h1>您的姓名</h1>
+                    <div class="title">高级软件工程师</div>
+                    <div class="contact-info">
+                        <span class="contact-item"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a3c6cec2cacfe3c6dbc2ced3cfc68dc0ccce">[email&#160;protected]</a></span>
+                        <span class="contact-item">+1 (123) 456-7890</span>
+                        <span class="contact-item">城市，国家</span>
+                        <span class="contact-item">linkedin.com/in/yourprofile</span>
+                    </div>
+                </div>
+            </header>
+            
+            <section class="resume-section">
+                <h2 class="section-title">专业概述</h2>
+                <div class="summary-text">
+                    拥有8年以上全栈开发、云架构和团队领导经验的结果导向型软件工程师。在交付可扩展解决方案方面拥有卓越业绩，能够推动业务增长并提升用户体验。热衷于编写优质代码、创新性问题解决以及指导新兴人才。
+                </div>
+            </section>
+            
+            <section class="resume-section">
+                <h2 class="section-title">工作经历</h2>
+                
+                <div class="item">
+                    <div class="item-header">
+                        <h3 class="item-title">高级软件工程师</h3>
+                        <div class="item-subtitle">科技公司</div>
+                        <div class="item-meta">2020年1月 - 至今 | 旧金山，加利福尼亚</div>
+                    </div>
+                    <div class="item-description">
+                        <ul>
+                            <li>领导5名工程师团队开发云原生微服务平台，将部署时间缩短60%</li>
+                            <li>架构并实施实时数据处理管道，每日处理超过1000万个事件</li>
+                            <li>指导初级开发人员并进行代码审查，以维持高质量代码标准</li>
+                            <li>与产品经理合作定义技术需求和项目路线图</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="item">
+                    <div class="item-header">
+                        <h3 class="item-title">软件工程师</h3>
+                        <div class="item-subtitle">数字解决方案有限公司</div>
+                        <div class="item-meta">2017年6月 - 2019年12月 | 纽约，纽约州</div>
+                    </div>
+                    <div class="item-description">
+                        <ul>
+                            <li>开发和维护RESTful API，服务超过50万日活跃用户</li>
+                            <li>优化数据库查询，使应用程序性能提高40%</li>
+                            <li>实施自动化测试框架，将代码覆盖率从45%提高到85%</li>
+                            <li>参与敏捷开发流程和冲刺计划会议</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="item">
+                    <div class="item-header">
+                        <h3 class="item-title">初级开发人员</h3>
+                        <div class="item-subtitle">创业创新公司</div>
+                        <div class="item-meta">2015年7月 - 2017年5月 | 波士顿，马萨诸塞州</div>
+                    </div>
+                    <div class="item-description">
+                        <ul>
+                            <li>使用React和Node.js构建响应式Web应用程序</li>
+                            <li>集成第三方API和支付处理系统</li>
+                            <li>与设计师合作实现像素完美的UI组件</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="resume-section">
+                <h2 class="section-title">教育背景</h2>
+                
+                <div class="item">
+                    <div class="item-header">
+                        <h3 class="item-title">计算机科学学士</h3>
+                        <div class="item-subtitle">大学名称</div>
+                        <div class="item-meta">2011 - 2015 | GPA: 3.8/4.0</div>
+                    </div>
+                    <div class="item-description">
+                        相关课程：数据结构、算法、数据库系统、软件工程、机器学习
+                    </div>
+                </div>
+            </section>
+            
+            <section class="resume-section">
+                <h2 class="section-title">技能</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>编程语言</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Java</span>
+                            <span class="skill-tag">TypeScript</span>
+                            <span class="skill-tag">Go</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>框架与库</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">Express</span>
+                            <span class="skill-tag">Django</span>
+                            <span class="skill-tag">Spring Boot</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>云服务与DevOps</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">AWS</span>
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">Kubernetes</span>
+                            <span class="skill-tag">CI/CD</span>
+                            <span class="skill-tag">Terraform</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>数据库</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">PostgreSQL</span>
+                            <span class="skill-tag">MongoDB</span>
+                            <span class="skill-tag">Redis</span>
+                            <span class="skill-tag">MySQL</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <!-- Japanese Version -->
+        <div id="japanese" class="tab-content">
+            <header class="resume-header">
+                <div class="profile-image-container">
+                    <img src="https://identicons.github.com/lokahe.png" alt="Profile Photo" class="profile-image">
+                </div>
+                <div class="header-content">
+                    <h1>羅　凱恒　（ら　がいこう）</h1>
+                    <div class="title">シニアソフトウェアエンジニア</div>
+                    <div class="contact-info">
+                        <span class="contact-item"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ee8b838f8782ae8b968f839e828bc08d8183">[email&#160;protected]</a></span>
+                        <span class="contact-item">+1 (123) 456-7890</span>
+                        <span class="contact-item">都市、国</span>
+                        <span class="contact-item">linkedin.com/in/yourprofile</span>
+                    </div>
+                </div>
+            </header>
+            
+            <section class="resume-section">
+                <h2 class="section-title">専門要約</h2>
+                <div class="summary-text">
+                    フルスタック開発、クラウドアーキテクチャ、チームリーダーシップにおいて8年以上の経験を持つ、結果重視のソフトウェアエンジニア。ビジネス成長を促進し、ユーザー体験を向上させるスケーラブルなソリューションの提供において実証された実績。クリーンなコード、革新的な問題解決、新興人材の育成に情熱を注ぐ。
+                </div>
+            </section>
+            
+            <section class="resume-section">
+                <h2 class="section-title">職務経歴</h2>
+                
+                <div class="item">
+                    <div class="item-header">
+                        <h3 class="item-title">シニアソフトウェアエンジニア</h3>
+                        <div class="item-subtitle">テック・カンパニー株式会社</div>
+                        <div class="item-meta">2020年1月 - 現在 | サンフランシスコ、カリフォルニア</div>
+                    </div>
+                    <div class="item-description">
+                        <ul>
+                            <li>5人のエンジニアチームを率いてクラウドネイティブマイクロサービスプラットフォームを開発し、デプロイ時間を60%削減</li>
+                            <li>1日あたり1000万以上のイベントを処理するリアルタイムデータ処理パイプラインを設計・実装</li>
+                            <li>ジュニア開発者の指導とコードレビューを実施し、高品質なコード基準を維持</li>
+                            <li>プロダクトマネージャーと協力して技術要件とプロジェクトロードマップを定義</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="item">
+                    <div class="item-header">
+                        <h3 class="item-title">ソフトウェアエンジニア</h3>
+                        <div class="item-subtitle">デジタルソリューション株式会社</div>
+                        <div class="item-meta">2017年6月 - 2019年12月 | ニューヨーク、ニューヨーク州</div>
+                    </div>
+                    <div class="item-description">
+                        <ul>
+                            <li>50万以上の日次アクティブユーザーにサービスを提供するRESTful APIの開発と保守</li>
+                            <li>データベースクエリを最適化し、アプリケーションのパフォーマンスを40%向上</li>
+                            <li>自動テストフレームワークを実装し、コードカバレッジを45%から85%に向上</li>
+                            <li>アジャイル開発プロセスとスプリント計画セッションに参加</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="item">
+                    <div class="item-header">
+                        <h3 class="item-title">ジュニア開発者</h3>
+                        <div class="item-subtitle">スタートアップイノベーションズ</div>
+                        <div class="item-meta">2015年7月 - 2017年5月 | ボストン、マサチューセッツ州</div>
+                    </div>
+                    <div class="item-description">
+                        <ul>
+                            <li>ReactとNode.jsを使用したレスポンシブWebアプリケーションの構築</li>
+                            <li>サードパーティAPIと決済処理システムの統合</li>
+                            <li>デザイナーと協力してピクセルパーフェクトなUIコンポーネントを実装</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="resume-section">
+                <h2 class="section-title">学歴</h2>
+                
+                <div class="item">
+                    <div class="item-header">
+                        <h3 class="item-title">コンピュータサイエンス学士</h3>
+                        <div class="item-subtitle">大学名</div>
+                        <div class="item-meta">2011 - 2015 | GPA: 3.8/4.0</div>
+                    </div>
+                    <div class="item-description">
+                        関連科目：データ構造、アルゴリズム、データベースシステム、ソフトウェア工学、機械学習
+                    </div>
+                </div>
+            </section>
+            
+            <section class="resume-section">
+                <h2 class="section-title">スキル</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>プログラミング言語</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Java</span>
+                            <span class="skill-tag">TypeScript</span>
+                            <span class="skill-tag">Go</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>フレームワーク・ライブラリ</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">Express</span>
+                            <span class="skill-tag">Django</span>
+                            <span class="skill-tag">Spring Boot</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>クラウド・DevOps</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">AWS</span>
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">Kubernetes</span>
+                            <span class="skill-tag">CI/CD</span>
+                            <span class="skill-tag">Terraform</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>データベース</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">PostgreSQL</span>
+                            <span class="skill-tag">MongoDB</span>
+                            <span class="skill-tag">Redis</span>
+                            <span class="skill-tag">MySQL</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        function switchTab(event, tabId) {
+            // Hide all tab contents
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Remove active class from all buttons
+            const tabButtons = document.querySelectorAll('.tab-button');
+            tabButtons.forEach(button => {
+                button.classList.remove('active');
+            });
+            
+            // Show selected tab content
+            document.getElementById(tabId).classList.add('active');
+            
+            // Add active class to clicked button
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>
