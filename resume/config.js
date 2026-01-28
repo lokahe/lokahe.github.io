@@ -363,7 +363,7 @@ const resumeConfig = {
                 japanese: "深セン大学"
             },
             period: "2010 - 2014",
-            gpa: "3.8/4.0",
+            gpa: "",
             coursework: {
                 english: "Software Engineering",
                 chinese: "数据结构、算法、数据库系统、软件工程、机器学习",
@@ -391,14 +391,14 @@ const resumeConfig = {
                 },
                 items: ["Compose", "Retrofit", "Room", "DataStore"]
             },
-            {
-                name: {
-                    english: "Cloud & DevOps",
-                    chinese: "云服务与DevOps",
-                    japanese: "クラウド・DevOps"
-                },
-                items: ["Github Actions", "Jenkins", "Kubernetes", "CI/CD", "Terraform"]
-            },
+//            {
+//                name: {
+//                    english: "Cloud & DevOps",
+//                    chinese: "云服务与DevOps",
+//                    japanese: "クラウド・DevOps"
+//                },
+//                items: ["Github Actions", "Jenkins", "Kubernetes", "CI/CD", "Terraform"]
+//            },
             {
                 name: {
                     english: "Databases",
@@ -409,6 +409,42 @@ const resumeConfig = {
             }
         ]
     },
+
+    // Certificates
+    certificates: [
+        {
+            title:{
+                english: "Certificate of Completion",
+                chinese: "证书",
+                japanese: "JLPT"
+            },
+            date:{
+                english: "January 2020",
+                chinese: "2020年1月",
+                japanese: "2025年8月"
+            },
+            type:{
+                english: "Language",
+                chinese: "软件工程师",
+                japanese: "言語"
+            },
+            level:{
+                english: "N1",
+                chinese: "N1",
+                japanese: "N1"
+            },
+            score:{
+                english: "80%",
+                chinese: "80%",
+                japanese: ""
+            },
+            description:{
+                english: "",
+                chinese: "",
+                japanese: ""
+            }
+        }
+    ],
 
     // Section Titles
     sectionTitles: {
@@ -431,6 +467,11 @@ const resumeConfig = {
             english: "Skills",
             chinese: "技能",
             japanese: "スキル"
+        },
+        certificates: {
+            english: "Certificates",
+            chinese: "证书",
+            japanese: "証明書"
         }
     }
 };
@@ -448,7 +489,8 @@ function getLanguageData(language) {
             summary: resumeConfig.sectionTitles.summary[language],
             experience: resumeConfig.sectionTitles.experience[language],
             education: resumeConfig.sectionTitles.education[language],
-            skills: resumeConfig.sectionTitles.skills[language]
+            skills: resumeConfig.sectionTitles.skills[language],
+            certificates: resumeConfig.sectionTitles.certificates[language]
         }
     };
 }
