@@ -523,9 +523,18 @@
                 itemDiv.className = 'item';
                 
                 const ul = document.createElement('ul');
-                exp.achievements[lang].forEach(achievement => {
+                exp.achievements.forEach(achi => {
                     const li = document.createElement('li');
-                    li.textContent = achievement;
+                    const titleText = achi.title[lang] ? `<strong>${achi.title[lang]}</strong>` : '';
+                    const periodText = achi.period && achi.period[lang] ? ` <em>(${achi.period[lang]})</em>` : '';
+                    let contentText = '';
+                    if (achi.items && achi.items[lang]) {
+                        achi.items[lang].forEach(item => {
+                            contentText += `<div style="margin-top: 8px;> <span font-weight: 500;">${item.title}</span>`;
+                            contentText += `<span style="color: var(--color-text-light); font-size: 0.95rem; margin-left: 10px;">${item.content}</span></div>`;
+                        });
+                    }
+                    li.innerHTML = `${titleText}${periodText}${contentText}`;
                     ul.appendChild(li);
                 });
                 

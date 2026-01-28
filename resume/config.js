@@ -84,44 +84,123 @@ const resumeConfig = {
                 title: {
                     english: "Senior Software Engineer",
                     chinese: "高级软件工程师",
-                    japanese: "シニアソフトウェアエンジニア"
+                    japanese: "スマホンアプリ"
                 },
                 period: {
                     english: "January 2020 - Present",
                     chinese: "2020年1月 - 至今",
-                    japanese: "2024 年 10月～現在"
+                    japanese: "2024年10月～現在"
                 },
-                content:{
-                    english: [
-                        "Led a team of 5 engineers in developing a cloud-native microservices platform, reducing deployment time by 60%",
-                        "Architected and implemented a real-time data processing pipeline handling 10M+ events daily",
-                        "Mentored junior developers and conducted code reviews to maintain high code quality standards",
-                        "Collaborated with product managers to define technical requirements and project roadmaps"
-                    ],
-                    chinese: [
-                        "领导5名工程师团队开发云原生微服务平台，将部署时间缩短60%",
-                        "架构并实施实时数据处理管道，每日处理超过1000万个事件",
-                        "指导初级开发人员并进行代码审查，以维持高质量代码标准",
-                        "与产品经理合作定义技术需求和项目路线图"
-                    ],
-                    japanese: [
-                        "2024年10月～現在　／　スマホンアプリ\n"+
-                        "【プロジェクト概要】入力アプリIWnnIME、OSV（Android 14→15、15→16）\n"+
-                        "【担当フェーズ】技術選定、開発、デバッグ\n"+
-                        "【業務内容】・ヒアリング、仕様書作成、開発、導入、保守メンテナンス\n"+
-                        "【実績・取り組み】\n"+
-                        " - クロスプラットフォーム環境での効率的な開発体制を構築\n"+
-                        " - edge-to-edge、predictive back、material3等新しいフィーチャーの対応を取り込む。\n"+
-                        " - 最新機能の導入・検証を通じたユーザー体験向上。\n"+
-                        "【開発環境】Windows 11　【言語】Java、kotlin、gradle、shell",
-                        "2024年10月～現在　／　タブレットアプリ\n"+
-                        "【プロジェクト概要】Amazon Tabletにプリインストールの導入開発\n"+
-                        "【担当フェーズ】技術選定、開発、デバッグ\n"+
-                        "【業務内容】ヒアリング、仕様書作成、開発、導入、保守メンテナンス\n"+
-                        "【実績・取り組み】\n"+
-                        "- Jetpack Ink API を活用した手書き入力機能の実装と最適化\n"+
-                        "- Amazon Tablet へのプリインストール導入を円滑に支援	\n"
-
+                items:{
+                    english:[{title:"",content:""}],
+                    chinese:[{title:"",content:""}],
+                    japanese:[
+                        {title:"【プロジェクト概要】",content:"入力アプリIWnnIME、OSV（Android 14→15、15→16）"},
+                        {title:"【担当フェーズ】",content:"技術選定、開発、デバッグ"},
+                        {title:"【業務内容】",content:"ヒアリング、仕様書作成、開発、導入、保守メンテナンス"},
+                        {title:"【実績・取り組み】",content:"\n - クロスプラットフォーム環境での効率的な開発体制を構築\n"+
+                                                     " - edge-to-edge、predictive back、material3等新しいフィーチャーの対応を取り込む。\n"+
+                                                     " - 最新機能の導入・検証を通じたユーザー体験向上。\n"},
+                        {title:"【開発環境】",content:"Windows 11"},
+                        {title:"【言語】",content:"Java、kotlin、gradle、shell"}
+                    ]
+                }
+            },
+            {
+                title: {
+                    english: "Senior Software Engineer",
+                    chinese: "高级软件工程师",
+                    japanese: "Amazonタブレットアプリ"
+                },
+                period: {
+                    english: "January 2020 - Present",
+                    chinese: "2020年1月 - 至今",
+                    japanese: "2024年10月～現在"
+                },
+                items:{
+                    english:[{title:"",content:""}],
+                    chinese:[{title:"",content:""}],
+                    japanese:[
+                        {title:"【プロジェクト概要】",content:"Amazon Tabletにプリインストールの導入開発"},
+                        {title:"【担当フェーズ】",content:"技術選定、開発、デバッグ"},
+                        {title:"【業務内容】",content:"ヒアリング、仕様書作成、開発、導入、保守メンテナンス"},
+                        {title:"【実績・取り組み】",content:"\n- Jetpack Ink API を活用した手書き入力機能の実装と最適化\n"+
+                                                      "- Amazon Tablet へのプリインストール導入を円滑に支援"},
+                        {title:"【開発環境】",content:"Windows 11"},
+                        {title:"【言語】",content:"Java、kotlin、gradle、shell"}
+                    ]
+                }
+            },
+            {
+                title: {
+                    english: "Senior Software Engineer",
+                    chinese: "高级软件工程师",
+                    japanese: "Bosch車載アプリ"
+                },
+                period: {
+                    english: "January 2020 - Present",
+                    chinese: "2020年1月 - 至今",
+                    japanese: "2024年10月～現在"
+                },
+                items:{
+                    english:[{title:"",content:""}],
+                    chinese:[{title:"",content:""}],
+                    japanese:[
+                        {title:"【プロジェクト概要】",content:"Bosch車載端末にプリインストールの導入開発"},
+                        {title:"【担当フェーズ】",content:"技術選定、開発、デバッグ"},
+                        {title:"【業務内容】",content:"開発、保守メンテナンス"},
+                        {title:"【実績・取り組み】",content:"\n- お客様の要件によって、カスタマイズバージョン開発\n"+
+                                                      "- Bosch車載端末プリインストール導入を円滑に支援"},
+                        {title:"【開発環境】",content:"Windows 11"},
+                        {title:"【言語】",content:"Java、kotlin、gradle、shell"}
+                    ]
+                }
+            },
+            ]
+        },
+        {
+            title: {
+                english: "Software Engineer",
+                chinese: "软件工程师",
+                japanese: "ソフトウェアエンジニア"
+            },
+            company: {
+                english: "Digital Solutions Ltd.",
+                chinese: "数字解决方案有限公司",
+                japanese: "Neusoft(東軟グループ)"
+            },
+            period: {
+                english: "June 2017 - December 2019",
+                chinese: "2017年6月 - 2019年12月",
+                japanese: "2024 年 6月～2024 年 8月"
+            },
+            location: {
+                english: "New York, NY",
+                chinese: "纽约，纽约州",
+                japanese: "大連、中国"
+            },
+            achievements: [{
+                title: {
+                    english: "Senior Software Engineer",
+                    chinese: "高级软件工程师",
+                    japanese: "スマホンアプリ"
+                },
+                period: {
+                    english: "January 2020 - Present",
+                    chinese: "2020年1月 - 至今",
+                    japanese: "2024 年 6月～2024 年 8月"
+                },
+                items:{
+                    english:[{title:"",content:""}],
+                    chinese:[{title:"",content:""}],
+                    japanese:[
+                        {title:"【プロジェクト概要】",content:"シマノE-TUBEのAndroidとiOS端末アプリ差分開発。"},
+                        {title:"【担当フェーズ】",content:"開発、デバッグ"},
+                        {title:"【業務内容】",content:"開発、保守メンテナンス"},
+                        {title:"【実績・取り組み】",content:"\n - 仕様書、差分一覧表なとによって、機能をリファクタリング。\n"+
+                                                     " - SDK化のため、UIとSDKの分離作業も行います。\n"},
+                        {title:"【開発環境】",content:"Windows 10"},
+                        {title:"【言語】",content:"java、kotlin、swift"}
                     ]
                 }
             }]
@@ -133,79 +212,140 @@ const resumeConfig = {
                 japanese: "ソフトウェアエンジニア"
             },
             company: {
-                english: "Digital Solutions Ltd.",
-                chinese: "数字解决方案有限公司",
-                japanese: "デジタルソリューション株式会社"
-            },
-            period: {
-                english: "June 2017 - December 2019",
-                chinese: "2017年6月 - 2019年12月",
-                japanese: "2017年6月 - 2019年12月"
-            },
-            location: {
-                english: "New York, NY",
-                chinese: "纽约，纽约州",
-                japanese: "ニューヨーク、ニューヨーク州"
-            },
-            achievements: {
-                english: [
-                    "Developed and maintained RESTful APIs serving 500K+ daily active users",
-                    "Optimized database queries resulting in 40% improvement in application performance",
-                    "Implemented automated testing framework, increasing code coverage from 45% to 85%",
-                    "Participated in agile development process and sprint planning sessions"
-                ],
-                chinese: [
-                    "开发和维护RESTful API，服务超过50万日活跃用户",
-                    "优化数据库查询，使应用程序性能提高40%",
-                    "实施自动化测试框架，将代码覆盖率从45%提高到85%",
-                    "参与敏捷开发流程和冲刺计划会议"
-                ],
-                japanese: [
-                    "50万以上の日次アクティブユーザーにサービスを提供するRESTful APIの開発と保守",
-                    "データベースクエリを最適化し、アプリケーションのパフォーマンスを40%向上",
-                    "自動テストフレームワークを実装し、コードカバレッジを45%から85%に向上",
-                    "アジャイル開発プロセスとスプリント計画セッションに参加"
-                ]
-            }
-        },
-        {
-            title: {
-                english: "Junior Developer",
-                chinese: "初级开发人员",
-                japanese: "ジュニア開発者"
-            },
-            company: {
                 english: "StartUp Innovations",
                 chinese: "创业创新公司",
-                japanese: "スタートアップイノベーションズ"
+                japanese: "iSoftStone(軟通動力信息技術（グループ）有限公司)（勤務先：平安(ピンアン)銀行）"
             },
             period: {
                 english: "July 2015 - May 2017",
                 chinese: "2015年7月 - 2017年5月",
-                japanese: "2015年7月 - 2017年5月"
+                japanese: "2020 年 5月～2022 年 7月"
             },
             location: {
                 english: "Boston, MA",
                 chinese: "波士顿，马萨诸塞州",
-                japanese: "ボストン、マサチューセッツ州"
+                japanese: "深セン、中国"
             },
-            achievements: {
-                english: [
-                    "Built responsive web applications using React and Node.js",
-                    "Integrated third-party APIs and payment processing systems",
-                    "Collaborated with designers to implement pixel-perfect UI components"
-                ],
-                chinese: [
-                    "使用React和Node.js构建响应式Web应用程序",
-                    "集成第三方API和支付处理系统",
-                    "与设计师合作实现像素完美的UI组件"
-                ],
-                japanese: [
-                    "ReactとNode.jsを使用したレスポンシブWebアプリケーションの構築",
-                    "サードパーティAPIと決済処理システムの統合",
-                    "デザイナーと協力してピクセルパーフェクトなUIコンポーネントを実装"
-                ]
-            }
+            achievements: [{
+                title: {
+                    english: "Senior Software Engineer",
+                    chinese: "高级软件工程师",
+                    japanese: "スマホンアプリ"
+                },
+                period: {
+                    english: "January 2020 - Present",
+                    chinese: "2020年1月 - 至今",
+                    japanese: "2020 年 5月～2022 年 7月"
+                },
+                items:{
+                    english:[{title:"",content:""}],
+                    chinese:[{title:"",content:""}],
+                    japanese:[
+                        {title:"【プロジェクト概要】",content:"知鳥（ズーニャウ）教育ライブアプリ開発。"},
+                        {title:"【担当フェーズ】",content:"開発、デバッグ"},
+                        {title:"【業務内容】",content:"ヒアリング、開発、導入、保守メンテナンス"},
+                        {title:"【実績・取り組み】",content:"\n - 毎月のバージョンアップによって、新たな業務、UIの開発、既有機能の調整。\n"+
+                                                     " - バックエンドとの通信（非同期IO開発）。"},
+                        {title:"【開発環境】",content:"Mac OS"},
+                        {title:"【言語】",content:"Java、kotlin"}
+                    ]
+                }
+            }]
+        },
+        {
+            title: {
+                english: "Software Engineer",
+                chinese: "软件工程师",
+                japanese: "ソフトウェアエンジニア"
+            },
+            company: {
+                english: "StartUp Innovations",
+                chinese: "创业创新公司",
+                japanese: "佰钧成(バイジュンチン)技術有限責任公司（勤務先：OPPO）"
+            },
+            period: {
+                english: "July 2015 - May 2017",
+                chinese: "2015年7月 - 2017年5月",
+                japanese: "2019 年 5月～2020 年 5月"
+            },
+            location: {
+                english: "Boston, MA",
+                chinese: "波士顿，马萨诸塞州",
+                japanese: "深セン、中国"
+            },
+            achievements: [{
+                title: {
+                    english: "Senior Software Engineer",
+                    chinese: "高级软件工程师",
+                    japanese: "スマホンアプリ"
+                },
+                period: {
+                    english: "January 2020 - Present",
+                    chinese: "2020年1月 - 至今",
+                    japanese: "2019 年 5月～2020 年 5月"
+                },
+                items:{
+                    english:[{title:"",content:""}],
+                    chinese:[{title:"",content:""}],
+                    japanese:[
+                        {title:"【プロジェクト概要】",content:"OPPOスマホンのOSアプリ開発。"},
+                        {title:"【担当フェーズ】",content:"開発、デバッグ"},
+                        {title:"【業務内容】",content:"ヒアリング、開発、導入、保守メンテナンス"},
+                        {title:"【実績・取り組み】",content:"\n - ダイヤルパッドにロングクリックと登録済みの番号ダイヤルするの機能。\n"+
+                                                     " - Android端末のシステムアプリ、印刷機にWiFiで連携機能。"},
+                        {title:"【開発環境】",content:"Windows 10"},
+                        {title:"【言語】",content:"Java"}
+                    ]
+                }
+            }]
+        },
+        {
+            title: {
+                english: "Software Engineer",
+                chinese: "软件工程师",
+                japanese: "ソフトウェアエンジニア"
+            },
+            company: {
+                english: "StartUp Innovations",
+                chinese: "创业创新公司",
+                japanese: "卓望（ゾーワン）ディジタル技術有限公司"
+            },
+            period: {
+                english: "July 2015 - May 2017",
+                chinese: "2015年7月 - 2017年5月",
+                japanese: "2014 年 7月～2019 年 5月"
+            },
+            location: {
+                english: "Boston, MA",
+                chinese: "波士顿，马萨诸塞州",
+                japanese: "深セン、中国"
+            },
+            achievements: [{
+                title: {
+                    english: "Senior Software Engineer",
+                    chinese: "高级软件工程师",
+                    japanese: "スマホンアプリ"
+                },
+                period: {
+                    english: "January 2020 - Present",
+                    chinese: "2020年1月 - 至今",
+                    japanese: "2014 年 7月～2019 年 5月"
+                },
+                items:{
+                    english:[{title:"",content:""}],
+                    chinese:[{title:"",content:""}],
+                    japanese:[
+                        {title:"【プロジェクト概要】",content:"アプリ自動テストシステム開発。"},
+                        {title:"【担当フェーズ】",content:"開発、デバッグ"},
+                        {title:"【業務内容】",content:"ヒアリング、開発、導入、保守メンテナンス"},
+                        {title:"【実績・取り組み】",content:"\n - テストケースによる、自動テストテストスクリプトを作成。\n"+
+                                                     " - テストプラットフォームとの連携、通信。\n"+
+                                                     " - 複数なテストスクリプトをパッケージして、テストプラットフォームにアップロード、効率なツール開発。"},
+                        {title:"【開発環境】",content:"Windows 7"},
+                        {title:"【言語】",content:"Java、C#"}
+                    ]
+                }
+            }]
         }
     ],
     
@@ -214,20 +354,20 @@ const resumeConfig = {
         {
             degree: {
                 english: "Bachelor of Science in Computer Science",
-                chinese: "计算机科学学士",
-                japanese: "コンピュータサイエンス学士"
+                chinese: "学士",
+                japanese: "学士"
             },
             school: {
-                english: "University Name",
-                chinese: "大学名称",
-                japanese: "大学名"
+                english: "ShenZhen University",
+                chinese: "深圳大学",
+                japanese: "深セン大学"
             },
-            period: "2011 - 2015",
+            period: "2010 - 2014",
             gpa: "3.8/4.0",
             coursework: {
-                english: "Data Structures, Algorithms, Database Systems, Software Engineering, Machine Learning",
+                english: "Software Engineering",
                 chinese: "数据结构、算法、数据库系统、软件工程、机器学习",
-                japanese: "データ構造、アルゴリズム、データベースシステム、ソフトウェア工学、機械学習"
+                japanese: "ソフトウェアエンジニアリング"
             }
         }
     ],
@@ -241,7 +381,7 @@ const resumeConfig = {
                     chinese: "编程语言",
                     japanese: "プログラミング言語"
                 },
-                items: ["JavaScript", "Python", "Java", "TypeScript", "Go"]
+                items: ["Java", "Kotlin", "C#", "Swift", "Gradle", "Shell"]
             },
             {
                 name: {
@@ -249,7 +389,7 @@ const resumeConfig = {
                     chinese: "框架与库",
                     japanese: "フレームワーク・ライブラリ"
                 },
-                items: ["React", "Node.js", "Express", "Django", "Spring Boot"]
+                items: ["Compose", "Retrofit", "Room", "DataStore"]
             },
             {
                 name: {
@@ -257,7 +397,7 @@ const resumeConfig = {
                     chinese: "云服务与DevOps",
                     japanese: "クラウド・DevOps"
                 },
-                items: ["AWS", "Docker", "Kubernetes", "CI/CD", "Terraform"]
+                items: ["Github Actions", "Jenkins", "Kubernetes", "CI/CD", "Terraform"]
             },
             {
                 name: {
@@ -265,11 +405,11 @@ const resumeConfig = {
                     chinese: "数据库",
                     japanese: "データベース"
                 },
-                items: ["PostgreSQL", "MongoDB", "Redis", "MySQL"]
+                items: ["Sqlite", "MySQL"]
             }
         ]
     },
-    
+
     // Section Titles
     sectionTitles: {
         summary: {
