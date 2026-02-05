@@ -37,7 +37,7 @@ const resumeConfig = {
             chinese: "城市，国家",
             japanese: "京都、日本"
         },
-        linkedin: "linkedin.com/in/yourprofile",
+        linkedin: "1991.6.9",
         github: "https://github.com/lokahe", // Optional
         website: "https://lokahe.github.io/" // Optional
     },
@@ -212,6 +212,53 @@ const resumeConfig = {
                 japanese: "ソフトウェアエンジニア"
             },
             company: {
+                english: "Digital Solutions Ltd.",
+                chinese: "数字解决方案有限公司",
+                japanese: "Bopeng有限公司"
+            },
+            period: {
+                english: "June 2017 - December 2019",
+                chinese: "2017年6月 - 2019年12月",
+                japanese: "2023 年 4月～2024 年 6月"
+            },
+            location: {
+                english: "New York, NY",
+                chinese: "纽约，纽约州",
+                japanese: "深セン、中国"
+            },
+            achievements: [{
+                title: {
+                    english: "Senior Software Engineer",
+                    chinese: "高级软件工程师",
+                    japanese: "スマホンアプリ"
+                },
+                period: {
+                    english: "January 2020 - Present",
+                    chinese: "2020年1月 - 至今",
+                    japanese: "2024 年 6月～2024 年 8月"
+                },
+                items:{
+                    english:[{title:"",content:""}],
+                    chinese:[{title:"",content:""}],
+                    japanese:[
+                        {title:"【プロジェクト概要】",content:"Bopeng掃除ロボットアプリ開発。"},
+                        {title:"【担当フェーズ】",content:"開発、デバッグ"},
+                        {title:"【業務内容】",content:"開発、保守メンテナンス"},
+                        {title:"【実績・取り組み】",content:"\n - Mqtt通信など機能開発\n"+
+                                                     " - 機能保守メンテナンス、性能改善\n"},
+                        {title:"【開発環境】",content:"Windows 10"},
+                        {title:"【言語】",content:"java"}
+                    ]
+                }
+            }]
+        },
+        {
+            title: {
+                english: "Software Engineer",
+                chinese: "软件工程师",
+                japanese: "ソフトウェアエンジニア"
+            },
+            company: {
                 english: "StartUp Innovations",
                 chinese: "创业创新公司",
                 japanese: "iSoftStone(軟通動力信息技術（グループ）有限公司)（勤務先：平安(ピンアン)銀行）"
@@ -219,7 +266,7 @@ const resumeConfig = {
             period: {
                 english: "July 2015 - May 2017",
                 chinese: "2015年7月 - 2017年5月",
-                japanese: "2020 年 5月～2022 年 7月"
+                japanese: "2020 年 5月～2022 年 8月"
             },
             location: {
                 english: "Boston, MA",
@@ -235,7 +282,7 @@ const resumeConfig = {
                 period: {
                     english: "January 2020 - Present",
                     chinese: "2020年1月 - 至今",
-                    japanese: "2020 年 5月～2022 年 7月"
+                    japanese: "2020 年 5月～2022 年 8月"
                 },
                 items:{
                     english:[{title:"",content:""}],
