@@ -1,0 +1,8 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.lokahe.androidmvvm",
+    "sha256_cert_fingerprints": ["F0:02:A2:61:74:28:32:35:33:ED:7D:E7:50:D9:E0:03:C3:6F:0D:1A:A7:8C:4F:B9:B0:3E:2C:35:EC:82:F3:92"]
+  }
+}]
